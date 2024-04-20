@@ -33,6 +33,7 @@ const Input = ({ onChange, searchQuery, onKeyDown }) => {
                     <input
                         type="color"
                         onChange={handleColorChange}
+                        onKeyDown={onKeyDown}
                         style={{
                             width: "30px",
                             height: "30px",
