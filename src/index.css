@@ -6,6 +6,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
     background-color: #25242a;
     font-family: "Gotham";
+    overflow-x: hidden;
 }
 * {
     margin: 0;
