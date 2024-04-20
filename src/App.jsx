@@ -38,27 +38,16 @@ function App() {
         const isHex = isValidHex(inputValue);
         const isRGB = isValidRGB(inputValue);
         if (isHex) {
-            if (isHexCodeInArray(inputValue, colorArray)) {
-                getSimilarColor(inputValue, colorArray);
-            } else {
-                toast.error("not a common color");
-            }
+            getSimilarColor(inputValue, colorArray);
         } else if (isRGB) {
             const hex = rgbStringToHex(inputValue);
-            if (isHexCodeInArray(hex, colorArray)) {
-                getSimilarColor(hex, colorArray);
-            } else {
-                toast.error("not a common color");
-            }
+            getSimilarColor(hex, colorArray);
         } else {
             toast.error("not a valid color");
         }
     };
     const handleChange = (e) => {
         setInputValue(e.target.value);
-    };
-    const isHexCodeInArray = (hexCode, colorArray) => {
-        return colorArray.some((color) => color.hex === hexCode);
     };
 
     const handleKeyPress = (e) => {
