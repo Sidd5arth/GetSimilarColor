@@ -1,7 +1,16 @@
 export function isValidRGB(value) {
     const rgbRegex = /^rgb\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*\)$/;
 
-    return rgbRegex.test(value);
+    const match = value.match(rgbRegex);
+    if (!match) {
+        return false;
+    }
+
+    const r = parseInt(match[1], 10);
+    const g = parseInt(match[2], 10);
+    const b = parseInt(match[3], 10);
+
+    return r >= 0 && r <= 255 && g >= 0 && g <= 255 && b >= 0 && b <= 255;
 }
 
 export function isValidHex(value) {
